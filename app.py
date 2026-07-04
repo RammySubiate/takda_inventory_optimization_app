@@ -12,102 +12,21 @@ import importlib
 # =========================
 st.set_page_config(page_title="Takda", layout="wide")
 
-
 st.markdown("""
 <style>
-
-/* Gradient */
-:root{
-    --takda-gradient: linear-gradient(
-        90deg,
-        #B83D38 0%,
-        #BF474F 25%,
-        #C04A7A 55%,
-        #D25A78 80%,
-        #DB865B 100%
-    );
+div[data-baseweb="select"] > div {
+    color: black;
+    border-color: gray;
 }
-
-/* ALL MAIN ACTION BUTTONS */
-div[data-testid="stButton"] > button,
-div[data-testid="stDownloadButton"] > button,
-div[data-testid="stForm"] button,
-div.stButton > button {
-
-    background: var(--takda-gradient) !important;
-    color: white !important;
-
-    border: none !important;
-    border-radius: 10px !important;
-
-    font-weight: 600 !important;
-
-    box-shadow: 0 5px 18px rgba(219,134,91,.35);
-
-    transition: all .25s ease;
-}
-
-/* Hover */
-div[data-testid="stButton"] > button:hover,
-div[data-testid="stDownloadButton"] > button:hover,
-div[data-testid="stForm"] button:hover,
-div.stButton > button:hover{
-
-    background: white !important;
+div.stButton > button:hover,
+button[kind="secondaryFormSubmit"]:hover,
+div[data-testid="stForm"] button:hover {
+    background-color: white !important;
     color: black !important;
-
-    border:2px solid #DB865B !important;
-
-    transform: translateY(-2px);
 }
-
-/* Click */
-div[data-testid="stButton"] > button:active,
-div[data-testid="stDownloadButton"] > button:active,
-div[data-testid="stForm"] button:active,
-div.stButton > button:active{
-
-    transform: scale(.98);
-}
-
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("""
-<style>
-
-/* ==========================================
-   EXCLUDE NUMBER INPUT (+ / -)
-========================================== */
-
-div[data-testid="stNumberInput"] button {
-
-    background: transparent !important;
-    background-image: none !important;
-
-    color: inherit !important;
-
-    border: none !important;
-    box-shadow: none !important;
-
-    transform: none !important;
-}
-
-/* Hover */
-
-div[data-testid="stNumberInput"] button:hover {
-
-    background: rgba(0,0,0,.06) !important;
-
-    color: inherit !important;
-
-    border: none !important;
-
-    box-shadow: none !important;
-}
-
-</style>
-""", unsafe_allow_html=True)
 
 # =========================
 # LOAD PROJECT MODULES
