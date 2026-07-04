@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import sys
 from pathlib import Path
 import plotly.express as px
 import plotly.graph_objects as go
@@ -31,15 +30,14 @@ div[data-testid="stForm"] button:hover {
 # =========================
 # LOAD PROJECT MODULES
 # =========================
-PROJECT_ROOT = Path(r'C:\Users\rbsubiate\Documents\RBS\TAKDA')
-sys.path.insert(0, str(PROJECT_ROOT))
+PROJECT_ROOT = Path(__file__).resolve().parent
 
 from lib import metrics, plots, vectorization
 importlib.reload(metrics)
 importlib.reload(plots)
 importlib.reload(vectorization)
 
-logo_path_main = fr"{PROJECT_ROOT}\assets\takda_logo.png"
+logo_path_main = str(PROJECT_ROOT / "assets" / "takda_logo.png")
 st.image(logo_path_main, width=500)
 
 
@@ -90,24 +88,24 @@ if st.session_state.entity == "Engineering Department":
 
 @st.cache_data(show_spinner=False)
 def get_items(entity: str):
-    path = fr"{PROJECT_ROOT}\transformed_data\{entity}_classification.csv"
+    path = PROJECT_ROOT / "transformed_data" / f"{entity}_classification.csv"
     df_item_classification = pd.read_csv(path)
 
-    path = fr"{PROJECT_ROOT}\transformed_data\{entity}_daily_inventory.csv"
+    path = PROJECT_ROOT / "transformed_data" / f"{entity}_daily_inventory.csv"
     df_inventory = pd.read_csv(path)
     df_inventory["inventory_date"] = pd.to_datetime(df_inventory["inventory_date"], errors="coerce")
 
-    path = fr"{PROJECT_ROOT}\transformed_data\{entity}_consumption.csv"
+    path = PROJECT_ROOT / "transformed_data" / f"{entity}_consumption.csv"
     df_consumption = pd.read_csv(path)
     df_consumption["consumption_date"] = pd.to_datetime(df_consumption["consumption_date"], errors="coerce")
 
-    path = fr"{PROJECT_ROOT}\transformed_data\{entity}_lead_time.csv"
+    path = PROJECT_ROOT / "transformed_data" / f"{entity}_lead_time.csv"
     df_lead_time = pd.read_csv(path)
     
-    path = fr"{PROJECT_ROOT}\transformed_data\{entity}_yearly_metrics.csv"
+    path = PROJECT_ROOT / "transformed_data" / f"{entity}_yearly_metrics.csv"
     df_yearly_metrics = pd.read_csv(path)
 
-    path = fr"{PROJECT_ROOT}\transformed_data\{entity}_po_status.csv"
+    path = PROJECT_ROOT / "transformed_data" / f"{entity}_po_status.csv"
     df_po_status_base = pd.read_csv(path)
 
     return (df_item_classification, 
@@ -128,7 +126,7 @@ def get_items(entity: str):
 # UI: LOGOS
 # =========================
 
-logo_path_sidebar = fr"{PROJECT_ROOT}\assets\tagline.png"
+logo_path_sidebar = str(PROJECT_ROOT / "assets" / "tagline.png")
 st.sidebar.image(logo_path_sidebar, width="stretch")
 
 # =========================
