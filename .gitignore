@@ -13,3 +13,6 @@ __pycache__/
 
 # Streamlit Secrets
 .streamlit/secrets.toml
+
+
+takda_inventory_optimization_app/
