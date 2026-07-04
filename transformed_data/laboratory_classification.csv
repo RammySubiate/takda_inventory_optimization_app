@@ -1,0 +1,46 @@
+item_no,description,movement_class,value_class
+LAB0001,HPLC Column C18 250mm,A,A
+LAB0002,Platinum Crucible 50mL,A,A
+LAB0003,ICP-OES Torch Assembly,A,A
+LAB0004,Certified Reference Standard Gold 1000ppm,A,A
+LAB0005,Quartz Cuvette Set 10mm,A,A
+LAB0006,Volumetric Flask Class A 1000mL,A,B
+LAB0007,pH Buffer Solution Set 4-7-10,A,B
+LAB0008,Micropipette Tips 1000uL Box/1000,A,B
+LAB0009,Analytical Balance Calibration Weight Set,A,B
+LAB0010,Amber Reagent Bottle 2.5L Borosilicate,A,B
+LAB0011,Disposable Nitrile Gloves Medium Box/100,A,C
+LAB0012,Filter Paper Whatman No.1 125mm Pk/100,A,C
+LAB0013,Parafilm M Sealing Film 4in x 125ft,A,C
+LAB0014,Plastic Weighing Boat Large Pk/500,A,C
+LAB0015,Kimwipes Delicate Task Wipes Box/280,A,C
+LAB0016,Karl Fischer Titration Reagent 2.5L,B,A
+LAB0017,UV-Vis Spectrophotometer Lamp Deuterium,B,A
+LAB0018,GC Capillary Column DB-5 30m,B,A
+LAB0019,Atomic Absorption Hollow Cathode Lamp Cu,B,A
+LAB0020,Titrator Electrode DGi115-SC,B,A
+LAB0021,Erlenmeyer Flask 500mL Borosilicate Pk/6,B,B
+LAB0022,Burette Class A 50mL with Stopcock,B,B
+LAB0023,Magnetic Stirrer Bar PTFE 50mm Pk/10,B,B
+LAB0024,Syringe Filter PVDF 0.45um Pk/100,B,B
+LAB0025,Desiccant Silica Gel Blue 1kg,B,B
+LAB0026,Test Tube Borosilicate 16x150mm Pk/72,B,C
+LAB0027,Rubber Stopper Assorted Sizes Pk/50,B,C
+LAB0028,Wash Bottle LDPE 500mL,B,C
+LAB0029,Glass Stirring Rod 200mm Pk/12,B,C
+LAB0030,Label Tape Chemical Resistant Roll,B,C
+LAB0031,Ion Chromatography Suppressor Cartridge,C,A
+LAB0032,Microwave Digestion Vessel TFM Set/6,C,A
+LAB0033,TOC Analyzer Catalyst Bead Pack,C,A
+LAB0034,Dissolved Oxygen Probe Membrane Cap,C,A
+LAB0035,Turbidity Calibration Kit 0.1-800 NTU,C,A
+LAB0036,Separatory Funnel 1000mL with PTFE Stopcock,C,B
+LAB0037,Heating Mantle 1000mL Round Bottom,C,B
+LAB0038,Condenser Liebig 300mm 24/40 Joint,C,B
+LAB0039,Vacuum Filtration Flask 2000mL,C,B
+LAB0040,Muffle Furnace Crucible Tongs 500mm,C,B
+LAB0041,Cork Ring Stand 140mm Diameter,C,C
+LAB0042,Spatula Stainless Steel Double End 150mm,C,C
+LAB0043,Wire Gauze with Ceramic Center 150mm,C,C
+LAB0044,Clamp Holder Boss Head Right Angle,C,C
+LAB0045,Funnel Glass Short Stem 100mm,C,C

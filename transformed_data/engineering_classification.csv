@@ -1,0 +1,46 @@
+item_no,description,movement_class,value_class
+ENG0001,Structural Steel H-Beam 300x300x10 6m,A,A
+ENG0002,Stainless Pipe Schedule 40 DN150 6m,A,A
+ENG0003,Electrical Cable XLPE 3C 185mm2 Per Meter,A,A
+ENG0004,Welding Rod ER309L TIG 2.4mm 5kg Pack,A,A
+ENG0005,Concrete Ready Mix 4000PSI Per Cubic Meter,A,A
+ENG0006,Conduit Rigid Galvanized 4in x 3m,A,B
+ENG0007,Paint Epoxy Industrial 2-Part 20L Kit,A,B
+ENG0008,Anchor Bolt Chemical Set M20x250mm Pk/10,A,B
+ENG0009,Welding Electrode E7018 3.2mm 20kg Carton,A,B
+ENG0010,GI Sheet Corrugated 0.5mm 8ft x 3ft,A,B
+ENG0011,Sandpaper Disc 180 Grit 125mm Pk/50,A,C
+ENG0012,Cutting Disc 125x1.0mm Metal Pk/25,A,C
+ENG0013,Marking Chalk Industrial Box/12,A,C
+ENG0014,Wire Brush Twisted Knot 100mm,A,C
+ENG0015,Safety Hard Hat White with Ratchet,A,C
+ENG0016,Circuit Breaker MCCB 3P 630A 50kA,B,A
+ENG0017,Flange Weld Neck 150# DN200 SS316,B,A
+ENG0018,PLC Module Analog Input 8-Channel 4-20mA,B,A
+ENG0019,Butterfly Valve Actuated DN300 PN16,B,A
+ENG0020,Instrument Cable Shielded 12PR 1.5mm2 Per Meter,B,A
+ENG0021,Pipe Elbow 90deg LR DN100 Sch40 SS304,B,B
+ENG0022,Cable Tray Ladder Type 600mm 3m Length,B,B
+ENG0023,Contactor 3-Pole 95A 230VAC Coil,B,B
+ENG0024,Thermocouple Type K 6in 1/2NPT SS Sheath,B,B
+ENG0025,Reducer Concentric DN150xDN100 Sch40 CS,B,B
+ENG0026,Terminal Block DIN Rail 2.5mm2 Pk/50,B,C
+ENG0027,Pipe Nipple GI 1in x 100mm Pk/20,B,C
+ENG0028,Stud Bolt B7 M16x150 with 2H Nuts Pk/10,B,C
+ENG0029,Cable Gland Brass M25 IP68 Pk/20,B,C
+ENG0030,Gasket Spiral Wound DN100 PN16 Pk/5,B,C
+ENG0031,Transformer Dry Type 1000kVA 11kV/400V,C,A
+ENG0032,DCS Controller Redundant Processor Module,C,A
+ENG0033,Stack Damper Actuator Electric 2000Nm,C,A
+ENG0034,Crane Wire Rope 28mm Galvanized 200m Drum,C,A
+ENG0035,Busbar Copper Tinned 100x10mm 5m Length,C,A
+ENG0036,Expansion Tank Bladder Type 300L,C,B
+ENG0037,Earthing Rod Copper Bonded 16mm x 3m,C,B
+ENG0038,Pressure Transmitter 4-20mA 0-100bar SS316,C,B
+ENG0039,Junction Box Explosion Proof ExD 300x300mm,C,B
+ENG0040,Flow Meter Electromagnetic DN100 Flanged,C,B
+ENG0041,Pipe Support Clamp U-Bolt 4in Galvanized Pk/10,C,C
+ENG0042,Warning Sign PVC High Voltage 300x200mm,C,C
+ENG0043,Cable Marker Strip 0-9 Set Pk/10,C,C
+ENG0044,Teflon Gasket Sheet 300x300x3mm,C,C
+ENG0045,Rivet Pop Aluminum 4.8x12mm Pk/500,C,C

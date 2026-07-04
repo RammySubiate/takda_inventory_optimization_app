@@ -10,28 +10,109 @@ import importlib
 # =========================
 # PAGE CONFIG
 # =========================
-st.set_page_config(page_title="ProPlanner", layout="wide")
+st.set_page_config(page_title="Takda", layout="wide")
+
 
 st.markdown("""
 <style>
-div[data-baseweb="select"] > div {
-    color: black;
-    border-color: gray;
+
+/* Gradient */
+:root{
+    --takda-gradient: linear-gradient(
+        90deg,
+        #B83D38 0%,
+        #BF474F 25%,
+        #C04A7A 55%,
+        #D25A78 80%,
+        #DB865B 100%
+    );
 }
-div.stButton > button:hover,
-button[kind="secondaryFormSubmit"]:hover,
-div[data-testid="stForm"] button:hover {
-    background-color: white !important;
+
+/* ALL MAIN ACTION BUTTONS */
+div[data-testid="stButton"] > button,
+div[data-testid="stDownloadButton"] > button,
+div[data-testid="stForm"] button,
+div.stButton > button {
+
+    background: var(--takda-gradient) !important;
+    color: white !important;
+
+    border: none !important;
+    border-radius: 10px !important;
+
+    font-weight: 600 !important;
+
+    box-shadow: 0 5px 18px rgba(219,134,91,.35);
+
+    transition: all .25s ease;
+}
+
+/* Hover */
+div[data-testid="stButton"] > button:hover,
+div[data-testid="stDownloadButton"] > button:hover,
+div[data-testid="stForm"] button:hover,
+div.stButton > button:hover{
+
+    background: white !important;
     color: black !important;
+
+    border:2px solid #DB865B !important;
+
+    transform: translateY(-2px);
 }
+
+/* Click */
+div[data-testid="stButton"] > button:active,
+div[data-testid="stDownloadButton"] > button:active,
+div[data-testid="stForm"] button:active,
+div.stButton > button:active{
+
+    transform: scale(.98);
+}
+
 </style>
 """, unsafe_allow_html=True)
 
+st.markdown("""
+<style>
+
+/* ==========================================
+   EXCLUDE NUMBER INPUT (+ / -)
+========================================== */
+
+div[data-testid="stNumberInput"] button {
+
+    background: transparent !important;
+    background-image: none !important;
+
+    color: inherit !important;
+
+    border: none !important;
+    box-shadow: none !important;
+
+    transform: none !important;
+}
+
+/* Hover */
+
+div[data-testid="stNumberInput"] button:hover {
+
+    background: rgba(0,0,0,.06) !important;
+
+    color: inherit !important;
+
+    border: none !important;
+
+    box-shadow: none !important;
+}
+
+</style>
+""", unsafe_allow_html=True)
 
 # =========================
 # LOAD PROJECT MODULES
 # =========================
-PROJECT_ROOT = Path(r'c:\Users\rbsubiate\Documents\projects\proplanner_2.0_vectorization')
+PROJECT_ROOT = Path(r'C:\Users\rbsubiate\Documents\RBS\TAKDA')
 sys.path.insert(0, str(PROJECT_ROOT))
 
 from lib import metrics, plots, vectorization
@@ -39,7 +120,7 @@ importlib.reload(metrics)
 importlib.reload(plots)
 importlib.reload(vectorization)
 
-logo_path_main = fr"{PROJECT_ROOT}\assets\proplanner_logo.png"
+logo_path_main = fr"{PROJECT_ROOT}\assets\takda_logo.png"
 st.image(logo_path_main, width=500)
 
 
@@ -51,9 +132,9 @@ if "entity" not in st.session_state:
     st.session_state.entity = None
 
 chosen_entity = st.selectbox("Select an Entity", options=["--Select--", 
-                                                          "Sem-Calaca Power Corporation", 
-                                                          "Southwest Luzon Power Generation Corporation",
-                                                          "Semirara Mining and Power Corporation"], 
+                                                          "Analytical Laboratory Department", 
+                                                          "Maintenance Department",
+                                                          "Engineering Department"], 
                                                          index=0)
 
 
@@ -80,34 +161,34 @@ if st.session_state.entity != st.session_state.prev_entity:
     st.session_state.run_simulation = False  
     ######
 
-if st.session_state.entity == "Sem-Calaca Power Corporation":
-    ENTITY = "scpc"
-if st.session_state.entity == "Southwest Luzon Power Generation Corporation":
-    ENTITY = "slpgc"
-if st.session_state.entity == "Semirara Mining and Power Corporation":
-    ENTITY = "smpc"
+if st.session_state.entity == "Analytical Laboratory Department":
+    ENTITY = "laboratory"
+if st.session_state.entity == "Maintenance Department":
+    ENTITY = "maintenance"
+if st.session_state.entity == "Engineering Department":
+    ENTITY = "engineering"
 
 
 @st.cache_data(show_spinner=False)
 def get_items(entity: str):
-    path = fr"{PROJECT_ROOT}\transformed_data\{entity}_item_classification.csv"
+    path = fr"{PROJECT_ROOT}\transformed_data\{entity}_classification.csv"
     df_item_classification = pd.read_csv(path)
 
-    path = fr"{PROJECT_ROOT}\transformed_data\{entity}_item_daily_inventory.csv"
+    path = fr"{PROJECT_ROOT}\transformed_data\{entity}_daily_inventory.csv"
     df_inventory = pd.read_csv(path)
     df_inventory["inventory_date"] = pd.to_datetime(df_inventory["inventory_date"], errors="coerce")
 
-    path = fr"{PROJECT_ROOT}\transformed_data\{entity}_item_consumption.csv"
+    path = fr"{PROJECT_ROOT}\transformed_data\{entity}_consumption.csv"
     df_consumption = pd.read_csv(path)
     df_consumption["consumption_date"] = pd.to_datetime(df_consumption["consumption_date"], errors="coerce")
 
-    path = fr"{PROJECT_ROOT}\transformed_data\{entity}_item_lead_time.csv"
+    path = fr"{PROJECT_ROOT}\transformed_data\{entity}_lead_time.csv"
     df_lead_time = pd.read_csv(path)
     
-    path = fr"{PROJECT_ROOT}\transformed_data\{entity}_item_yearly_metrics.csv"
+    path = fr"{PROJECT_ROOT}\transformed_data\{entity}_yearly_metrics.csv"
     df_yearly_metrics = pd.read_csv(path)
 
-    path = fr"{PROJECT_ROOT}\transformed_data\{entity}_item_po_status_base.csv"
+    path = fr"{PROJECT_ROOT}\transformed_data\{entity}_po_status.csv"
     df_po_status_base = pd.read_csv(path)
 
     return (df_item_classification, 
@@ -128,9 +209,8 @@ def get_items(entity: str):
 # UI: LOGOS
 # =========================
 
-logo_path_sidebar = fr"{PROJECT_ROOT}\assets\{ENTITY}_logo.png"
-st.sidebar.image(logo_path_sidebar, width='stretch')
-
+logo_path_sidebar = fr"{PROJECT_ROOT}\assets\tagline.png"
+st.sidebar.image(logo_path_sidebar, width="stretch")
 
 # =========================
 # SIDEBAR: ITEM SELECTION

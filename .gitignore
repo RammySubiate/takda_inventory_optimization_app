@@ -13,6 +13,3 @@ __pycache__/
 
 # Streamlit Secrets
 .streamlit/secrets.toml
-
-# Ignore transformed data
-transformed_data/
