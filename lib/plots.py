@@ -159,7 +159,13 @@ def plot_history_and_forecast_plotly(
     # -------------------------
     fig.update_layout(
         title=dict(
-            text=f"{inp.item_no} - {inp.description}",
+            text=(
+                f"{inp.item_no} - {inp.description}"
+                "<br>"
+                "<span style='font-size:14px; color:gray;'>"
+                "This data is mock and AI-generated for demonstration purposes."
+                "</span>"
+            ),
             font=dict(size=24)
         ),
         xaxis_title="Date",
